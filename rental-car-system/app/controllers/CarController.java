@@ -20,6 +20,12 @@ public class CarController extends Controller {
         car6.save();
         Car car7 = new Car(7, "Subaru", "Impreza", 2012, 20.0);
         car7.save();
+        Car car8 = new Car(8, "Kia", "Forte", 2011, 15.0);
+        car8.save();
+        Car car9 = new Car(9, "Volkswagen", "Jetta", 2010, 10.0);
+        car9.save();
+        Car car10 = new Car(10, "Chevrolet", "Cruze", 2009, 5.0);
+        car10.save();
 
         // Return a "success" message
         return ok("Car created successfully");
