@@ -5,7 +5,7 @@ import play.mvc.Controller;
 import play.mvc.Result;
 
 public class CarController extends Controller {
-    public Result createCar() {
+    public Result addCars() {
         Car car1 = new Car(1, "Toyota", "Corolla", 2018, 50.0);
         car1.save();
         Car car2 = new Car(2, "Honda", "Civic", 2017, 45.0);
@@ -20,8 +20,13 @@ public class CarController extends Controller {
         car6.save();
         Car car7 = new Car(7, "Subaru", "Impreza", 2012, 20.0);
         car7.save();
-
-        // Return a "success" message
-        return ok("Car created successfully");
+        Car car8 = new Car(8, "Kia", "Forte", 2011, 15.0);
+        car8.save();
+        Car car9 = new Car(9, "Volkswagen", "Jetta", 2010, 10.0);
+        car9.save();
+        Car car10 = new Car(10, "Chevrolet", "Cruze", 2009, 5.0);
+        car10.save();
+        return ok("Cars added successfully");
     }
+
 }

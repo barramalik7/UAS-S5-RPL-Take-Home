@@ -1,0 +1,29 @@
+<!-- views/createRental.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Rental</title>
+</head>
+<body>
+<h1>Create Rental</h1>
+<form action="/createRental" method="post">
+    <label for="carId">Car:</label>
+    <select name="carId" id="carId">
+        <option value="">-- Choose a car --</option>
+        <!-- Add options for each car here -->
+    </select>
+    <br>
+    <label for="customerName">Customer Name:</label>
+    <input type="text" name="customerName" id="customerName">
+    <br>
+    <label for="startDate">Start Date:</label>
+    <input type="date" name="startDate" id="startDate">
+    <br>
+    <label for="endDate">End Date:</label>
+    <input type="date" name="endDate" id="endDate">
+    <br>
+    <input type="submit" value="Create Rental">
+</form>
+</body>
+</html>
