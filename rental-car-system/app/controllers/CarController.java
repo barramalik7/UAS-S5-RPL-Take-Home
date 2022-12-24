@@ -27,6 +27,10 @@ public class CarController extends Controller {
         Car car10 = new Car(10, "Chevrolet", "Cruze", 2009, 5.0);
         car10.save();
         return ok("Cars added successfully");
+
+        // Return a "success" message
+        return ok("Car created successfully");
+
     }
 
 }
