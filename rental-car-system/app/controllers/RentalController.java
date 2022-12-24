@@ -9,6 +9,11 @@ import java.util.Date;
 import java.util.List;
 
 public class RentalController extends Controller {
+    public Result createRentalForm() {
+        List<Car> cars = Car.find.all();
+        return ok(views.html.createRental.render(cars));
+    }
+
     public Result createRental(int carId, String customerName, Date startDate, Date endDate) {
         Car car = Car.find.byId(carId);
         if (car == null) {
@@ -20,12 +25,25 @@ public class RentalController extends Controller {
         return ok("Rental created successfully");
     }
 
-    public Result readRental(int rentalId) {
+    public Result listRentals() {
+        List<Rental> rentals = Rental.find.all();
+        return ok(views.html.listRentals.render(rentals));
+    }
+
+    public Result viewRental(int rentalId) {
         Rental rental = Rental.find.byId(rentalId);
         if (rental == null) {
             return notFound("Rental not found");
         }
-        return ok(rental.toString());
+        return ok(views.html.viewRental.render(rental));
+    }
+
+    public Result updateRentalForm(int rentalId) {
+        Rental rental = Rental.find.byId(rentalId);
+        if (rental == null) {
+            return notFound("Rental not found");
+        }
+        return ok(views.html.updateRental.render(rental));
     }
 
     public Result updateRental(int rentalId, String customerName, Date startDate, Date endDate) {
@@ -47,10 +65,5 @@ public class RentalController extends Controller {
         }
         rental.delete();
         return ok("Rental deleted successfully");
-    }
-
-    public Result listRentals() {
-        List<Rental> rentals = Rental.find.all();
-        return ok(rentals.toString());
     }
 }
